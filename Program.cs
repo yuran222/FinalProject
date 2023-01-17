@@ -55,3 +55,12 @@ string[] NewArrayLessThan3(int lenght, string[] array)
     }
     return array2;
 }
+
+Console.WriteLine("Сколько сообщений вы бы хотели ввести?");
+int lenght = Convert.ToInt32(Console.ReadLine());
+string[] array1 = CreateArray(lenght);
+Console.WriteLine("Введеные вами сообщения:");
+ShowArray(array1);
+string[] ArrayLessThan3 = NewArrayLessThan3(NewArraySize(array1),array1);
+Console.WriteLine("Сообщения с длинной 3 или меньше:");
+ShowArray(ArrayLessThan3);
