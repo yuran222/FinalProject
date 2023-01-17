@@ -28,5 +28,16 @@ void ShowArray(string[] array)
     Console.WriteLine();
 }
 
-
+int NewArraySize(string[] array)
+{
+    int newsize = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            newsize++;
+        }
+    }
+    return newsize;
+}
 
