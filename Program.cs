@@ -8,7 +8,7 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-string[] CreateArray(int lenght)
+string[] CreateArray(int lenght) //просит указать размер базового массива и заполняет его элементами, вводимыми пользователем
 {
     string[] array = new string[lenght];
     Console.WriteLine($"Введите {lenght} текстовых или символьных сообщения");
@@ -19,7 +19,9 @@ string[] CreateArray(int lenght)
     return array;
 }
 
-void ShowArray(string[] array)
+
+
+void ShowArray(string[] array) //выводит любой одномерный массив на экран
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -28,7 +30,7 @@ void ShowArray(string[] array)
     Console.WriteLine();
 }
 
-int NewArraySize(string[] array)
+int NewArraySize(string[] array) //определяет размер нового массива для заполнения сообщениеями длинной менее 4 символов
 {
     int newsize = 0;
     for (int i = 0; i < array.Length; i++)
@@ -41,7 +43,7 @@ int NewArraySize(string[] array)
     return newsize;
 }
 
-string[] NewArrayLessThan3(int lenght, string[] array)
+string[] NewArrayLessThan3(int lenght, string[] array) //создает новый массив из старого, заполняя его элементами старого массива размером менее 4 символов
 {
     string[] array2 = new string[lenght];
     int j = 0;
@@ -56,11 +58,17 @@ string[] NewArrayLessThan3(int lenght, string[] array)
     return array2;
 }
 
+
+//запрос на кол-во сообщений в массиве
 Console.WriteLine("Сколько сообщений вы бы хотели ввести?");
 int lenght = Convert.ToInt32(Console.ReadLine());
+
+//создание базового массива
 string[] array1 = CreateArray(lenght);
 Console.WriteLine("Введеные вами сообщения:");
 ShowArray(array1);
-string[] ArrayLessThan3 = NewArrayLessThan3(NewArraySize(array1),array1);
+
+//создание требуемого масссива и вывод на экран его элементов
+string[] ArrayLessThan3 = NewArrayLessThan3(NewArraySize(array1), array1);
 Console.WriteLine("Сообщения с длинной 3 или меньше:");
 ShowArray(ArrayLessThan3);
