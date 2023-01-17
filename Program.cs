@@ -41,3 +41,17 @@ int NewArraySize(string[] array)
     return newsize;
 }
 
+string[] NewArrayLessThan3(int lenght, string[] array)
+{
+    string[] array2 = new string[lenght];
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            array2[j] = array[i];
+            j++;
+        }
+    }
+    return array2;
+}
